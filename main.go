@@ -83,7 +83,7 @@ func main() {
 
 	marshalbytes, err := yaml.Marshal(&finaldata)
 	if err != nil {
-		fmt.Println(err.Error)
+		fmt.Println(err)
 	}
 	///////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////// WRITE YAML DATA TO A FILE/////////////////////
@@ -92,7 +92,7 @@ func main() {
 	writeErr := ioutil.WriteFile("crypto-config.yaml", marshalbytes, 0644)//0644 gives user permission to read and write
 
 	if writeErr != nil {
-		fmt.Println(writeErr.Error)
+		fmt.Println("Error Writing File")
 	}
 	fmt.Println("%%%%%%%%%%%Done creating crypto-config.yaml%%%%%%%%%%%%%%%")
 }
